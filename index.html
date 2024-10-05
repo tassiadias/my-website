@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tássia Dias</title>
+        <link rel="stylesheet" href="style.css">
+        <!-- Link to Google Font: IBM Plex Mono -->
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">    
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav id="navbar">
+        <ul>
+            <li><a href="#home" class="active">home</a></li>
+            <li><a href="#work">work</a></li>
+            <li><a href="#about">about</a></li>
+            <li><a href="#contact">contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="hero-container">
+        <div class="hero-wrapper">
+        <div class="hero-content">
+            <h1>hello, I’m <span class="highlight">Tássia</span><br></h1>  
+              <h2> – a <em>product manager</em><br>
+                exploring ideas,<br> automating processes<br> & building digital products.
+            </h2>
+        </div>
+
+        <div class="circle-wrapper">
+            <!-- Circular Text using SVG -->
+            <svg class="circle-text" viewBox="0 0 100 100">
+                <path id="circle" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"/>
+                <text>
+                    <textPath href="#circle" startOffset="50%" text-anchor="middle">
+                        WEB DEVELOPMENT • UX DESIGN • DATA ANALYTICS • AI •
+                    </textPath>
+                </text>
+            </svg>
+        </div> </div>
+    </section>
+    <div class="divider">//////////////////////</div>
+
+    
+
+
+    <!-- Placeholder sections for other navigation links -->
+    <section id="work">
+        <div class="work-container">
+            <h1 class="work-title">Work</h1>
+            <p class="coming-soon-text">Coming soon. Check my 
+                <a href="https://www.linkedin.com/in/tassiadias/" target="_blank">LinkedIn</a> and 
+                <a href="https://github.com/tassiadias" target="_blank">GitHub</a> meanwhile.
+            </p>
+        </div>
+    </section>
+
+    <div class="divider">//////////////////////</div>
+
+    <section id="about">
+        <div class="about-container">
+            <!-- About Section Title -->
+            <div class="about-title">
+                <h1>a little <span class="line">about me</span></h1>
+            </div>
+    
+            <!-- About Section Content -->
+            <div class="about-content">
+                <p>
+                    I was proudly born in Sete Lagoas, MG, and have always been driven by curiosity and creativity. I graduated as a Control and Automation Engineer from UFMG, having part of my degree at QUT in Australia. Living abroad gave me a fresh perspective and fueled my passion for exploring new contexts. 
+                    My journey has led me through various paths—delving into product development, data analytics, and web technologies. Alongside my tech career, I co-founded a Reiki business with my wife, exploring holistic wellness and personal growth.
+When I'm not building products, you'll find me immersed in music. I play a few instruments and take some risks with music production. Pop culture is my playground; I probably know more about it than most people you know!
+I'm also an artsy soul, always inspired by anything creative. On top of that, I’m owned by two cats, Serena and Zara.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <div class="divider">//////////////////////</div>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="contact-content">
+            <h1>let's <span class="line">connect</span></h1>
+            <form id="contact-form">
+                <div class="form-group">
+                    <input type="text" id="name" placeholder="Name" required>
+                    <input type="email" id="email" placeholder="Email" required>
+                    <input type="text" id="subject" placeholder="Subject (Optional)">
+                </div>
+                <textarea id="message" placeholder="Your message goes over here." required></textarea>
+                <button type="submit">send message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- JavaScript File -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,330 @@
+/* Global Styles */
+body {
+    margin: 0;
+    background-color: black;
+    color: yellow;
+    scroll-behavior: smooth;
+    font-family: 'Courier New', Courier, monospace; /* Use common monospace fonts */
+
+}
+
+
+
+/* Navigation Bar */
+#navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: black;
+    text-align: center;
+    z-index: 1000;
+    display: flex;
+    justify-content: right;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+}
+
+#navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 0; /* Remove the gap to create continuous borders */
+}
+
+#navbar li {
+    flex-grow: 1;
+    display: flex;
+    border-right: 1px solid white; /* Add right border to each li */
+}
+/* Remove the border for the last item to avoid double border */
+#navbar li:last-child {
+    border-right: none;
+}
+
+#navbar li:first-child {
+    border-left: 1px solid white;;
+}
+
+#navbar a {
+    color: yellow;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 20px 40px;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+#navbar a:hover {
+    background-color: yellow;
+    color: black;
+}
+
+
+/* Hero Section */
+/* Hero Section Container */
+#hero-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    height: 80vh; /* Adjust the height as needed */
+}
+
+/* Wrapper for the Hero Content and Circle */
+.hero-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* Hero Text Styling */
+.hero-content {
+    font-family: 'Courier New', Courier, monospace; /* Use common monospace fonts */
+    max-width: 60%;
+    text-align: left; /* Align the text to the left */
+    margin-left: 8%
+}
+
+.hero-content h1 {
+    font-size: 5rem;
+    line-height: 1.2;
+    margin-bottom: 0;
+}
+
+.hero-content h2 {
+    font-size: 3rem;
+    line-height: 1.2;
+}
+
+.hero-content .highlight {
+    background-color: yellow;
+    color: black;
+}
+
+
+/* Circular Text Wrapper */
+.circle-wrapper {
+    position: absolute; /* Positioning absolutely */
+    bottom: 30px; /* Adjust this value to move it more/less to the bottom */
+    left: 80%; /* Adjust this value to move it more to the left or right */
+    transform: translateX(-50%); /* Center it horizontally based on its own width */
+    width: 150px; /* Adjust the size as needed */
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Circular Text */
+.circle-text {
+    width: 100%;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+
+}
+
+.circle-text text {
+    font-size: 6px; /* Adjust font size as needed */
+    fill: yellow; /* Color of the circular text */
+}
+
+.circle-text textPath {
+    letter-spacing: 1.2px; /* Spacing between characters */
+}
+
+
+/* Contact Section */
+.contact-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 20px;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.contact-content {
+    max-width: 800px;
+}
+
+.contact-content h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+}
+
+.contact-content .line {
+    display: inline-block;
+    position: relative;
+}
+
+.contact-content .line::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: yellow;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+}
+
+#contact-form {
+    margin-top: 30px;
+}
+
+.form-group {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+#contact-form input, #contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    background: black;
+    color: yellow;
+    border: none;
+    border-bottom: 2px solid yellow;
+    font-size: 1rem;
+}
+
+#contact-form textarea {
+    height: 150px;
+    resize: none;
+}
+
+#contact-form button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background: yellow;
+    color: black;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#contact-form button:hover {
+    background: #333;
+    color: yellow;
+}
+
+/* About Section */
+#about {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    height: 80vh; /* Adjust height as needed */
+}
+
+/* About Title Styling */
+#about {
+    padding: 50px;
+}
+
+/* Flex container for title and content */
+.about-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Align items to the top */
+}
+
+.about-title {
+    width: 40%;
+    text-align: center; /* Keep the title aligned to the left */
+}
+
+.about-title h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.about-title .line {
+    display: inline-block;
+    border-bottom: 2px solid yellow; /* Adjust color to match your theme */
+}
+
+/* About Content Styling */
+.about-content {
+    width: 40%; /* Adjust width to 40% of the page */
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Adjust font styling */
+.about-content p {
+    color: yellow; /* Set the text color to match your theme */
+}
+
+
+/* Placeholder Sections */
+section {
+    padding: 100px 20px;
+    min-height: 100vh;
+    text-align: center;
+}
+
+
+/* Work Section */
+#work {
+    padding: 50px;
+    text-align: center;
+}
+
+.work-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.work-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: yellow;
+}
+
+.coming-soon-text {
+    font-size: 1.2rem;
+    color: yellow;
+}
+
+.coming-soon-text a {
+    color: yellow;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.coming-soon-text a:hover {
+    color: white; /* Change the color on hover for effect */
+}
+
+
+/* For Smaller Screens */
+@media (max-width: 768px) {
+    #navbar ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .hero-content h1, .contact-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content h2 {
+        font-size: 1rem;
+    }
+
+    .form-group {
+        flex-direction: column;
+    }
+}
+
