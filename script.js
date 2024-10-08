@@ -1,3 +1,21 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('#nav-links');
+
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('open');
+
+            console.log('Menu button clicked'); // Debugging line
+        });
+    } else {
+        console.error('Menu toggle or nav links not found');
+    }
+});
+
+
+
 // Smooth scrolling and highlighting the active section in the navbar
 document.querySelectorAll('#navbar a').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
