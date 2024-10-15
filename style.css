@@ -5,9 +5,7 @@ body {
     color: yellow;
     scroll-behavior: smooth;
     font-family: 'Courier New', Courier, monospace; /* Use common monospace fonts */
-
 }
-
 
 
 /* Navigation Bar */
@@ -107,17 +105,21 @@ body {
 }
 
 
+
 /* Circular Text Wrapper */
+
 .circle-wrapper {
     position: absolute; /* Positioning absolutely */
     bottom: 30px; /* Adjust this value to move it more/less to the bottom */
-    left: 80%; /* Adjust this value to move it more to the left or right */
-    transform: translateX(-50%); /* Center it horizontally based on its own width */
+    left: 75%; /* Adjust this value to move it more to the left or right */
+    /* transform: translateX(-50%); Center it horizontally based on its own width */
     width: 150px; /* Adjust the size as needed */
     height: 150px;
     display: flex;
     align-items: center;
     justify-content: center;
+    animation: rotateCircle 20s linear infinite; /* Controls the speed and repetition */
+
 }
 
 
@@ -126,9 +128,17 @@ body {
     width: 100%;
     height: 100%;
     font-family: 'Arial', sans-serif;
-
 }
 
+@keyframes rotateCircle {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+}
+    
 .circle-text text {
     font-size: 6px; /* Adjust font size as needed */
     fill: yellow; /* Color of the circular text */
@@ -265,11 +275,12 @@ body {
 }
 
 
-/* Placeholder Sections */
 section {
     padding: 100px 20px;
     min-height: 100vh;
     text-align: center;
+    overflow: hidden;
+    display: block;
 }
 
 
@@ -316,6 +327,7 @@ section {
     width: 30px;
     height: 30px;
     z-index: 1001; /* Ensure the hamburger is above the menu */
+    margin-right: 10px; /* Adjust the margin */
 }
 
 .hamburger .bar {
@@ -327,15 +339,22 @@ section {
 
 /* Transform bars into an "X" when the menu is open */
 .hamburger.open .bar:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
+    transform: rotate(45deg);
+    transform-origin: left; /* Rotate from the left side */
 }
 
 .hamburger.open .bar:nth-child(2) {
-    opacity: 0;
+    opacity: 0; /* Middle bar fades out */
 }
 
 .hamburger.open .bar:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
+    transform: rotate(-45deg);
+    transform-origin: left; /* Rotate from the left side */
+}
+
+/* Optional: Smooth transitions */
+.hamburger .bar {
+    transition: all 0.3s ease; /* Smooth transitions */
 }
 
 /* Hide the navigation links by default on small screens */
@@ -344,11 +363,16 @@ section {
 }
 
 
-
 /* For Smaller Screens */
 @media (max-width: 768px) {
     .hamburger {
         display: flex; /* Show the hamburger menu */
+        margin-right: 10px; /* Adjust the margin */
+    }
+
+    #navbar {
+        height: 60px; /* Increase the navbar height */
+        align-items: center;
     }
 
     #nav-links {
@@ -373,10 +397,15 @@ section {
         flex-direction: column; /* Stack menu items vertically */
     }
 
+    #navbar li:first-child {
+        border-left: none;
+    }
+    
     #navbar li {
         width: 100%;
         text-align: center;
         border-right: none; /* Remove right border */
+        border-left: none;
         border-bottom: 1px solid white; /* Add bottom border */
     }
 
@@ -384,6 +413,7 @@ section {
     .about-container {
         flex-direction: column;
         align-items: center; /* Center elements */
+        margin: auto;
     }
 
     .about-title,
@@ -413,6 +443,14 @@ section {
         display: none;
     }
 
+    section {
+        padding: 50px 20px; /* Increase padding for better spacing on mobile */
+    }
+
+    .circle-wrapper {
+        bottom: 30px; /* Adjust this value to move it more/less to the bottom */
+        left: 60%; /
+    }
 
 }
 
