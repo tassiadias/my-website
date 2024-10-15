@@ -24,6 +24,22 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
+    let form = event.target;
+
+    // Submit the form via Netlify
+    fetch(form.action, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(form)).toString()
+    })
+    .then(() => {
+        document.getElementById('form-response').style.display = 'block'; // Show success message
+        form.style.display = 'none'; // Hide the form
+    })
+    .catch(error => alert('Form submission error: ' + error));
+});
 
 
 // Smooth scrolling and highlighting the active section in the navbar
