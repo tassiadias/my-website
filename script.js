@@ -1,16 +1,26 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('#nav-links');
+document.addEventListener("DOMContentLoaded", function () {
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("nav-links");
 
-    if (menuToggle && navLinks) {
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            menuToggle.classList.toggle('open');
+    // Check if hamburger and navLinks exist before proceeding
+    if (hamburger && navLinks) {
+        const links = navLinks.querySelectorAll("li");
 
-            console.log('Menu button clicked'); // Debugging line
+        // Toggle the menu when hamburger is clicked
+        hamburger.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+            hamburger.classList.toggle("open"); // Optional: animate the hamburger icon
+        });
+
+        // Close the menu when any link is clicked
+        links.forEach(link => {
+            link.addEventListener("click", () => {
+                navLinks.classList.remove("active");
+                hamburger.classList.remove("open");
+            });
         });
     } else {
-        console.error('Menu toggle or nav links not found');
+        console.error("Hamburger or NavLinks not found in the DOM");
     }
 });
 
